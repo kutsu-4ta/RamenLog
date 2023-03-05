@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
       //   backgroundColor: Colors.black12,
       //   elevation: 0,
       // ),
-      backgroundColor: Colors.white54,
+      backgroundColor: Colors.white10,
       body: Center(
         child: Container(
 
@@ -88,11 +88,11 @@ class _HomePageState extends State<HomePage> {
                           width: 100,
                           child: ElevatedButton.icon(
                             style: ElevatedButton.styleFrom(
-                                primary: Colors.primaries.last,
+                                primary: Colors.white24,
                                 onPrimary: Colors.white,
                                 fixedSize: Size.fromWidth(350),
                                 side: BorderSide(
-                                  color: Colors.white,
+                                  // color: Colors.white,
                                 ),
                                 elevation: 0,
                                 shape: RoundedRectangleBorder(
@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                             label: Text('探す',
                                 style: TextStyle(
                                   fontSize: 15,
-                                  color: Colors.white,
+                                  // color: Colors.white,
                                 )),
                           ),
                         ),
@@ -113,11 +113,11 @@ class _HomePageState extends State<HomePage> {
                           width: 100,
                           child: ElevatedButton.icon(
                             style: ElevatedButton.styleFrom(
-                                primary: Colors.primaries.last,
+                                primary: Colors.white24,
                                 onPrimary: Colors.white,
                                 fixedSize: Size.fromWidth(350),
                                 side: BorderSide(
-                                  color: Colors.white,
+                                  // color: Colors.white,
                                 ),
                                 elevation: 0,
                                 shape: RoundedRectangleBorder(
@@ -139,11 +139,11 @@ class _HomePageState extends State<HomePage> {
                           width: 100,
                           child: ElevatedButton.icon(
                             style: ElevatedButton.styleFrom(
-                                primary: Colors.primaries.last,
+                                primary: Colors.white24,
                                 onPrimary: Colors.white,
                                 fixedSize: Size.fromWidth(350),
                                 side: BorderSide(
-                                  color: Colors.white,
+                                  // color: Colors.white,
                                 ),
                                 elevation: 0,
                                 shape: RoundedRectangleBorder(
@@ -177,11 +177,11 @@ class _HomePageState extends State<HomePage> {
                             height: 60,
                             child: ElevatedButton.icon(
                               style: ElevatedButton.styleFrom(
-                                  primary: Colors.primaries.last,
+                                  primary: Colors.white24,
                                   onPrimary: Colors.white,
                                   fixedSize: Size.fromWidth(350),
                                   side: BorderSide(
-                                    color: Colors.white,
+                                    // color: Colors.white,
                                   ),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.only(
@@ -205,11 +205,11 @@ class _HomePageState extends State<HomePage> {
                             height: 60,
                             child: ElevatedButton.icon(
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.primaries.last,
+                                primary: Colors.white24,
                                 onPrimary: Colors.white,
                                 fixedSize: Size.fromWidth(350),
                                 side: BorderSide(
-                                  color: Colors.white,
+                                  // color: Colors.white,
                                 ),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.only(
@@ -223,7 +223,7 @@ class _HomePageState extends State<HomePage> {
                               label: Text('マイログ',
                                   style: TextStyle(
                                     fontSize: 20,
-                                    color: Colors.white,
+                                    // color: Colors.white,
                                   )
                               ),
                             ),

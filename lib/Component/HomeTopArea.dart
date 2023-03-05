@@ -10,7 +10,7 @@ class HomeTopArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          primary: Colors.black54,
+          primary: Colors.white24,
           onPrimary: Colors.white,
           fixedSize: Size.fromWidth(350),
           shape:
