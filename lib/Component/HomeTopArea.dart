@@ -10,7 +10,7 @@ class HomeTopArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          primary: Colors.black,
+          primary: Colors.black54,
           onPrimary: Colors.white,
           fixedSize: Size.fromWidth(350),
           shape:
@@ -18,7 +18,7 @@ class HomeTopArea extends StatelessWidget {
       onPressed: onPressed,
       child: Container(
         alignment: Alignment.centerLeft,
-        padding: const EdgeInsets.all(6),
+        padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
