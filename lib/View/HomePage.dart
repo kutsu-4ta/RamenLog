@@ -1,5 +1,6 @@
 import 'dart:math';
 import '../Component/HomeTopArea.dart';
+import '../Component/HomeMiddleArea.dart';
 import 'package:flutter/material.dart';
 import 'package:menlog/View/QuickInputPage.dart';
 
@@ -52,88 +53,21 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                 Row(
                   mainAxisSize: MainAxisSize.max,
-                  // mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Expanded(
                       child: HomeTopArea(
                           onPressed: _movePage
                       ),
-                        // child: ElevatedButton(
-                        //
-                        //   style: ElevatedButton.styleFrom(
-                        //     primary: Colors.black,
-                        //       onPrimary: Colors.white,
-                        //       fixedSize: Size.fromWidth(350),
-                        //       shape: RoundedRectangleBorder(
-                        //           borderRadius: BorderRadius.circular(20))),
-                        //   onPressed: _movePage,
-                        //   child: Container(
-                        //     alignment: Alignment.centerLeft,
-                        //     padding: const EdgeInsets.all(6),
-                        //         child: Column(
-                        //           crossAxisAlignment: CrossAxisAlignment.start,
-                        //           children: <Widget>[
-                        //             Text('まる得ラーメン 大学前店 ',
-                        //                 style: TextStyle(
-                        //                   fontSize: 20,
-                        //                 color: Colors.white,
-                        //               )
-                        //             ),
-                        //             Text('ガチ徳ラーメン（大）',
-                        //                 style: TextStyle(
-                        //                   fontSize: 15,
-                        //                   color: Colors.white,
-                        //                 )
-                        //             ),
-                        //             Text('2023-03-02'),
-                        //             Text('⭐︎⭐︎⭐︎⭐☆︎'),
-                        //             Container(
-                        //               alignment: Alignment.centerRight,
-                        //               child: Container(
-                        //                 padding: const EdgeInsets.all(4),
-                        //                 decoration: BoxDecoration(
-                        //                   borderRadius: BorderRadius.circular(10),
-                        //                   border: Border.all(color: Colors.red),
-                        //                   color: Colors.red,
-                        //                 ),
-                        //                 child: Text(
-                        //                   'クイック入力済み',
-                        //                   style: TextStyle(
-                        //                     color: Colors.white,
-                        //                   ),
-                        //                 ),
-                        //               ),
-                        //             ),
-                        //           ],
-                        //         ),
-                        //       ),
-                        // ),
                     ),
                   ],
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        Container(
-                          width: max(100, 350),
-                          height: max(100, 250),
-                          margin: EdgeInsets.only(
-                            top: 40,
-                          ),
-                          padding: const EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.blue),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: TextButton(
-                            child: Text('マイラーメンデータ'),
-                            onPressed: _movePage,
-                          ),
-                        ),
-                      ],
+                    Expanded(
+                      child: HomeMiddleArea(
+                          height: 300,
+                      ),
                     ),
                   ],
                 ),
@@ -154,30 +88,10 @@ class _HomePageState extends State<HomePage> {
                             border: Border.all(color: Colors.blue),
                             // borderRadius: BorderRadius.circular(10),
                           ),
+
                           child: Text('メニュー群'),
                         ),
                       ],
-                    ),
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                        child:Text('')
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(2),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border:                                             Border.all(color: Colors.red),
-                        color: Colors.red,
-                      ),
-                      child: Text(
-                        'クイック入力済み',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
                     ),
                   ],
                 ),
