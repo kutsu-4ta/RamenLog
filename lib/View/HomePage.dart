@@ -52,8 +52,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.white10,
       body: Center(
         child: Container(
-
-          margin: EdgeInsets.only(top: 50),
+          margin: EdgeInsets.only(top: 150),
           padding: const EdgeInsets.all(20),
           child: Column(
             children: <Widget>[
