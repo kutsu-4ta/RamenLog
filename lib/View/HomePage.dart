@@ -1,14 +1,20 @@
 import 'dart:math';
 import 'package:flutter/rendering.dart';
-
+import 'package:camera/camera.dart';
 import '../Component/HomeTopArea.dart';
 import '../Component/HomeMiddleArea.dart';
 import 'package:flutter/material.dart';
 import 'package:menlog/View/QuickInputPage.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key, required this.title}) : super(key: key);
+  const HomePage({
+    Key? key,
+    required this.title,
+    // required this.camera,
+  }) : super(key: key);
+
   final String title;
+  // final CameraDescription camera;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -35,7 +41,10 @@ class _HomePageState extends State<HomePage> {
     await Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) {
-          return QuickInputPage(title: 'title');
+          return QuickInputPage(
+            title: widget.title,
+            // camera: widget.camera,
+          );
         },
       ),
     );

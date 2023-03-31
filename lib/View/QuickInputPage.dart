@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'HomePage.dart';
 import '../Component/DropDownButton.dart';
+import 'dart:io';
+import 'package:camera/camera.dart';
+import '../Component/CameraComponent.dart';
 
 class QuickInputPage extends StatefulWidget {
-  const QuickInputPage({Key? key, required this.title}) : super(key: key);
+  const QuickInputPage({Key? key,
+    required this.title,
+    // required this.camera
+  }) : super(key: key);
+
   final String title;
+  // final CameraDescription camera;
 
   @override
   State<QuickInputPage> createState() => _QuickInputPageState();
@@ -19,10 +27,23 @@ class _QuickInputPageState extends State<QuickInputPage> {
     await Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) {
-          return HomePage(title: 'title');
+          return HomePage(
+              title: widget.title,
+              // camera: widget.camera
+          );
         },
       ),
     );
+  }
+
+  void _takePicture() async {
+    // await Navigator.of(context).push(
+    //   MaterialPageRoute(
+    //     builder: (context) {
+    //       return TakePictureScreen(camera: widget.camera);
+    //     },
+    //   ),
+    // );
   }
 
   @override
@@ -222,7 +243,7 @@ class _QuickInputPageState extends State<QuickInputPage> {
                                 primary: Colors.white24,
                                 onPrimary: Colors.white,
                                 fixedSize: Size.fromWidth(350),
-                                side: BorderSide(
+                                side: const BorderSide(
                                   // color: Colors.white,
                                 ),
                                 elevation: 0,
@@ -232,7 +253,46 @@ class _QuickInputPageState extends State<QuickInputPage> {
                             ),
                             onPressed: _movePage,
                             icon: Icon(Icons.app_registration),
-                            label: Text('保存',
+                            label: const Text('保存',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.white,
+                                )
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(top: 40),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          margin: const EdgeInsets.all(10),
+                          width: 150,
+                          child: ElevatedButton.icon(
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.white24,
+                                onPrimary: Colors.white,
+                                fixedSize: Size.fromWidth(350),
+                                side: BorderSide(
+                                  // color: Colors.white,
+                                ),
+                                elevation: 0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                )
+                            ),
+                            onPressed: _takePicture,
+                            icon: Icon(Icons.camera),
+                            label: const Text('カメラ',
                                 style: TextStyle(
                                   fontSize: 15,
                                   color: Colors.white,
