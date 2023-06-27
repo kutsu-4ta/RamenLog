@@ -53,26 +53,73 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text(widget.title),
-      //   backgroundColor: Colors.black12,
-      //   elevation: 0,
-      // ),
-      backgroundColor: Colors.white10,
+      appBar: AppBar(
+        title: Text(widget.title, style: TextStyle(color: Colors.white),),
+        backgroundColor: Colors.black,
+        elevation: 0,
+        shape: Border(
+          bottom: BorderSide(color: Colors.white, width: 2)
+        ),
+      ),
+      backgroundColor: Colors.black,
       body: Center(
         child: Container(
-          margin: EdgeInsets.only(top: 150),
-          padding: const EdgeInsets.all(20),
+          margin: EdgeInsets.only(top: 30, left: 15, right: 15),
+          // padding: const EdgeInsets.all(20),
           child: Column(
             children: <Widget>[
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                children: <Widget>[
-                  Expanded(
-                    child: HomeTopArea(onPressed: _movePage),
-                  ),
-                ],
-              ), // クイック入力
+              Container(
+                width: double.infinity,
+                child: Text(
+                  'Recomend',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(color: Colors.white, fontSize: 40),
+                ),
+              ),
+              // ラーメンタイル
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    for (var i = 0; i < 10; i++)
+                      Container(
+                        color: i.isEven ? Colors.blue : Colors.pink,
+                        width: 150,
+                        height: 140,
+                        margin: EdgeInsets.all(15),
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 150,
+                              height: 90,
+                            ),
+                            Container(
+                                width: 150,
+                                height: 50,
+                                alignment: Alignment.bottomLeft,
+                                decoration: BoxDecoration(color: Colors.black54),
+                              child: Column(
+                                children: [
+                                  Text("★★★☆☆", style: TextStyle(color: Colors.white, fontSize: 15),),
+                                  Text('ラーメン', style: TextStyle(color: Colors.white, fontSize:15),),
+                                ],
+                              )
+                              )
+                          ],
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 30),
+                width: double.infinity,
+                child: Text(
+                    'Ramen Data',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(color: Colors.white, fontSize: 40),
+                ),
+              ),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
@@ -84,96 +131,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ), // マイラーメンデータ
               Row(
-                mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.only(top: 40),
-                    child: Row(
-                      children: <Widget>[
-                        Container(
-                          margin: const EdgeInsets.all(10),
-                          width: 100,
-                          child: ElevatedButton.icon(
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.white24,
-                                onPrimary: Colors.white,
-                                fixedSize: Size.fromWidth(350),
-                                side: BorderSide(
-                                  // color: Colors.white,
-                                ),
-                                elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                )
-                            ),
-                            onPressed: _movePage,
-                            icon: Icon(Icons.location_on),
-                            label: Text('探す',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  // color: Colors.white,
-                                )),
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.all(10),
-                          width: 100,
-                          child: ElevatedButton.icon(
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.white24,
-                                onPrimary: Colors.white,
-                                fixedSize: Size.fromWidth(350),
-                                side: BorderSide(
-                                  // color: Colors.white,
-                                ),
-                                elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                )
-                            ),
-                            onPressed: _movePage,
-                            icon: Icon(Icons.share),
-                            label: Text('勧める',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.white,
-                                )
-                            ),
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.all(10),
-                          width: 100,
-                          child: ElevatedButton.icon(
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.white24,
-                                onPrimary: Colors.white,
-                                fixedSize: Size.fromWidth(350),
-                                side: BorderSide(
-                                  // color: Colors.white,
-                                ),
-                                elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                )
-                            ),
-                            onPressed: _movePage,
-                            icon: Icon(Icons.person),
-                            label: Text('設定',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.white,
-                                )
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ), // メニューエリア
-              Row(
                 children: <Widget>[
                   Container(
                     margin: EdgeInsets.only(top: 40),
@@ -181,26 +139,20 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         children: <Widget>[
                           Container(
-                            width: 190,
+                            width: 300,
                             height: 60,
                             child: ElevatedButton.icon(
                               style: ElevatedButton.styleFrom(
-                                  primary: Colors.white24,
+                                  primary: Colors.blueAccent,
                                   onPrimary: Colors.white,
                                   fixedSize: Size.fromWidth(350),
                                   side: BorderSide(
                                     // color: Colors.white,
                                   ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(20),
-                                      bottomLeft: Radius.circular(20),
-                                    ),
-                                  )
                               ),
                               onPressed: _movePage,
                               icon: Icon(Icons.edit),
-                              label: Text('クイック入力',
+                              label: Text('add Ramen Log',
                                   style: TextStyle(
                                     fontSize: 20,
                                     color: Colors.white,
@@ -208,34 +160,6 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                           ),
-                          Container(
-                            width: 190,
-                            height: 60,
-                            child: ElevatedButton.icon(
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.white24,
-                                onPrimary: Colors.white,
-                                fixedSize: Size.fromWidth(350),
-                                side: BorderSide(
-                                  // color: Colors.white,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(20),
-                                    bottomRight: Radius.circular(20),
-                                  ),
-                                ),
-                              ),
-                              onPressed: _movePage,
-                              icon: Icon(Icons.format_list_bulleted),
-                              label: Text('マイログ',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    // color: Colors.white,
-                                  )
-                              ),
-                            ),
-                          )
                         ],
                       ),
                     ),

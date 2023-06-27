@@ -9,10 +9,10 @@ class HomeMiddleArea extends StatelessWidget {
     return Container(
       height: this.height,
       margin: EdgeInsets.only(
-          top: 40
+          top: 15
       ),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
+          // borderRadius: BorderRadius.circular(30),
           image: DecorationImage(
             image: AssetImage('Images/HomeMyRamenDataBackground.png'),
             fit: BoxFit.cover,
