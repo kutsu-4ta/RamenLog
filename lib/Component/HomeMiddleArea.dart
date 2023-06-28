@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'BarChart.dart';
 
 class HomeMiddleArea extends StatelessWidget {
   final double height;
@@ -12,22 +13,17 @@ class HomeMiddleArea extends StatelessWidget {
           top: 15
       ),
       decoration: BoxDecoration(
-          // borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(30),
           image: DecorationImage(
             image: AssetImage('Images/HomeMyRamenDataBackground.png'),
             fit: BoxFit.cover,
           )
       ),
-      child: Column(
+      child: Row(
         children: <Widget>[
           Container(
-            padding: const EdgeInsets.all(20),
-            child: Text('MyRamenData',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-              ),
-            ),
+            alignment: Alignment.center,
+            child: PieChartSample2(),
           ),
         ],
       ),
