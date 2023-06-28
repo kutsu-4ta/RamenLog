@@ -53,18 +53,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title, style: TextStyle(color: Colors.white),),
-        backgroundColor: Colors.black,
-        elevation: 0,
-        shape: Border(
-          bottom: BorderSide(color: Colors.white, width: 2)
-        ),
-      ),
+      // appBar: AppBar(
+      //   title: Text(widget.title, style: TextStyle(color: Colors.white),),
+      //   backgroundColor: Colors.black,
+      //   elevation: 0,
+      //   shape: Border(
+      //     bottom: BorderSide(color: Colors.white, width: 2)
+      //   ),
+      // ),
       backgroundColor: Colors.black,
       body: Center(
         child: Container(
-          margin: EdgeInsets.only(top: 30, left: 15, right: 15),
+          margin: EdgeInsets.only(top: 100, left: 15, right: 15),
           // padding: const EdgeInsets.all(20),
           child: Column(
             children: <Widget>[
@@ -76,40 +76,8 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(color: Colors.white, fontSize: 40),
                 ),
               ),
-              // ラーメンタイル
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    for (var i = 0; i < 10; i++)
-                      Container(
-                        color: i.isEven ? Colors.blue : Colors.pink,
-                        width: 150,
-                        height: 140,
-                        margin: EdgeInsets.all(15),
-                        child: Column(
-                          children: [
-                            Container(
-                              width: 150,
-                              height: 90,
-                            ),
-                            Container(
-                                width: 150,
-                                height: 50,
-                                alignment: Alignment.bottomLeft,
-                                decoration: BoxDecoration(color: Colors.black54),
-                              child: Column(
-                                children: [
-                                  Text("★★★☆☆", style: TextStyle(color: Colors.white, fontSize: 15),),
-                                  Text('ラーメン', style: TextStyle(color: Colors.white, fontSize:15),),
-                                ],
-                              )
-                              )
-                          ],
-                        ),
-                      ),
-                  ],
-                ),
+              HomeTopArea(
+                onPressed: _movePage,
               ),
               Container(
                 margin: EdgeInsets.only(top: 30),
@@ -125,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   Expanded(
                     child: HomeMiddleArea(
-                      height: 300,
+                        onPressed: _movePage
                     ),
                   ),
                 ],

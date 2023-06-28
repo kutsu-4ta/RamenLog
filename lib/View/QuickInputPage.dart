@@ -18,8 +18,10 @@ class QuickInputPage extends StatefulWidget {
   State<QuickInputPage> createState() => _QuickInputPageState();
 }
 
-const  List<String> ramenList = <String>['細麺', '太麺', '平麺', '縮れ麺', '辛麺麺','多加水麺','変わり種'];
-const  List<String> soupList = <String>['豚骨', '醤油', '塩', '味噌', '魚介','鶏ガラ','坦々'];
+const  List<String> menHardnessList = <String>['バリカタ', 'カタ', 'フツウ', 'ヤワ', 'バリヤワ'];
+const  List<String> menThicknessList = <String>['細', '中', '太', '極細', '極太'];
+const  List<String> menTypeList = <String>['縮れ麺', '辛麺麺', '多加水麺', '変わり種'];
+const  List<String> soupList = <String>['豚骨', '醤油', '塩', '味噌', '魚介', '鶏ガラ', '坦々'];
 
 class _QuickInputPageState extends State<QuickInputPage> {
 
@@ -49,13 +51,10 @@ class _QuickInputPageState extends State<QuickInputPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text(widget.title),
-      // ),
-      backgroundColor: Colors.white10,
+      backgroundColor: Colors.black,
       body: Center(
         child: Container(
-          margin: EdgeInsets.only(top: 20),
+          margin: EdgeInsets.only(top: 30),
           padding: const EdgeInsets.all(20),
           child: Column(
             children: <Widget>[
@@ -160,19 +159,31 @@ class _QuickInputPageState extends State<QuickInputPage> {
                     width: 100,
                     child: Text(
                       '麺',
-                      style: TextStyle(
-                          color: Colors.white
-                      ),
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child:DropdownButtonMenu(
-                        list:ramenList,
-                      ),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 100,
+                          child: DropdownButtonMenu(
+                            list: menHardnessList,
+                          ),
+                        ),
+                        Container(
+                          width: 90,
+                          child: DropdownButtonMenu(
+                            list: menThicknessList,
+                          ),
+                        ),
+                        Container(
+                          width: 100,
+                          child: DropdownButtonMenu(
+                            list: menTypeList,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -212,48 +223,23 @@ class _QuickInputPageState extends State<QuickInputPage> {
                         Container(
                           margin: const EdgeInsets.all(10),
                           width: 150,
+                          height: 150,
                           child: ElevatedButton.icon(
                             style: ElevatedButton.styleFrom(
-                                primary: Colors.white24,
-                                onPrimary: Colors.white,
+                                primary: Colors.white60,
+                                onPrimary: Colors.white60,
                                 fixedSize: Size.fromWidth(350),
                                 side: BorderSide(
-                                  // color: Colors.white,
+                                  color: Colors.white54,
                                 ),
                                 elevation: 0,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30),
+                                  borderRadius: BorderRadius.circular(5),
                                 )
                             ),
-                            onPressed: _movePage,
-                            icon: Icon(Icons.cancel),
-                            label: Text('キャンセル',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.white,
-                                )
-                            ),
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.all(10),
-                          width: 150,
-                          child: ElevatedButton.icon(
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.white24,
-                                onPrimary: Colors.white,
-                                fixedSize: Size.fromWidth(350),
-                                side: const BorderSide(
-                                  // color: Colors.white,
-                                ),
-                                elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                )
-                            ),
-                            onPressed: _movePage,
-                            icon: Icon(Icons.app_registration),
-                            label: const Text('保存',
+                            onPressed: _takePicture,
+                            icon: Icon(Icons.add_a_photo),
+                            label: const Text('Add Image',
                                 style: TextStyle(
                                   fontSize: 15,
                                   color: Colors.white,
@@ -276,13 +262,14 @@ class _QuickInputPageState extends State<QuickInputPage> {
                       children: <Widget>[
                         Container(
                           margin: const EdgeInsets.all(10),
-                          width: 150,
+                          width: 300,
+                          height: 50,
                           child: ElevatedButton.icon(
                             style: ElevatedButton.styleFrom(
-                                primary: Colors.white24,
+                                primary: Colors.blueAccent,
                                 onPrimary: Colors.white,
                                 fixedSize: Size.fromWidth(350),
-                                side: BorderSide(
+                                side: const BorderSide(
                                   // color: Colors.white,
                                 ),
                                 elevation: 0,
@@ -290,11 +277,11 @@ class _QuickInputPageState extends State<QuickInputPage> {
                                   borderRadius: BorderRadius.circular(30),
                                 )
                             ),
-                            onPressed: _takePicture,
-                            icon: Icon(Icons.camera),
-                            label: const Text('カメラ',
+                            onPressed: _movePage,
+                            icon: Icon(Icons.save_rounded),
+                            label: const Text('save Ramen',
                                 style: TextStyle(
-                                  fontSize: 15,
+                                  fontSize: 20,
                                   color: Colors.white,
                                 )
                             ),

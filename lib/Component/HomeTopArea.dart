@@ -1,4 +1,3 @@
-import 'package:menlog/main.dart';
 import 'package:flutter/material.dart';
 
 class HomeTopArea extends StatelessWidget {
@@ -6,53 +5,45 @@ class HomeTopArea extends StatelessWidget {
 
   const HomeTopArea({Key? key, required this.onPressed}) : super(key: key);
 
+  // ラーメンタイル
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-          primary: Colors.white24,
-          onPrimary: Colors.white,
-          fixedSize: Size.fromWidth(350),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
-      onPressed: onPressed,
-      child: Container(
-        alignment: Alignment.centerLeft,
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text('まる得ラーメン 大学前店 ',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                )),
-            Text('ガチ徳ラーメン（大）',
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.white,
-                )),
-            Text('2023-03-02'),
-            Text('⭐︎⭐︎⭐︎⭐☆︎'),
-            Container(
-              alignment: Alignment.centerRight,
-              child: Container(
-                padding: const EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.red),
-                  color: Colors.red,
-                ),
-                child: Text(
-                  'クイック入力済み',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          for (var i = 0; i < 10; i++)
+            ElevatedButton(
+              onPressed: onPressed,
+              style: ElevatedButton.styleFrom(
+                primary: Colors.black,
+                onPrimary: Colors.black,
               ),
-            ),
-          ],
-        ),
+              child: Container(
+                color: i.isEven ? Colors.blue : Colors.pink,
+                width: 150,
+                height: 140,
+                child: Container(
+                    width: 150,
+                    height: 50,
+                    alignment: Alignment.bottomLeft,
+                    margin: EdgeInsets.only(top: 90),
+                    decoration: BoxDecoration(color: Colors.black54),
+                    child: Column(
+                      children: [
+                        Text(
+                          "★★★☆☆",
+                          style: TextStyle(color: Colors.yellow, fontSize: 15),
+                        ),
+                        Text(
+                          'ラーメン',
+                          style: TextStyle(color: Colors.white, fontSize: 15),
+                        ),
+                      ],
+                    )),
+              ),
+            )
+        ],
       ),
     );
   }
